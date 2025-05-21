@@ -1,0 +1,175 @@
+---
+title: "School Management System Build Plan"
+---
+
+import { Info } from "@/components/ui/info";
+
+# 🎓 School Management System – Build Plan
+
+<Info>
+This plan outlines the entire feature set, architecture, and phased development process for a modern school management system using **RemixJS**, **TypeScript**, **Radix UI**, and **Supabase**.
+</Info>
+
+## 🧰 Tech Stack
+
+### Core Technologies
+- **RemixJS**: Full-stack React framework
+- **TypeScript**: Type safety
+- **Radix UI + TailwindCSS**: Component library + styling
+- **Supabase**: Auth, Realtime DB, Storage, Edge Functions
+
+### Enhancements
+- **Zod**: Form validation
+- **React Hook Form**: Easy form handling
+- **React Query**: API state management
+- **Sonner**: Toast notifications
+- **Sentry**: Error monitoring
+- **Resend**: Email delivery
+- **UploadThing/FilePond**: File uploads
+
+## 🎯 Features
+
+### 👤 User Management
+- Sign Up / Sign In (magic link + OAuth)
+- Role-based routing (Admin, Teacher, Student)
+- Profile editing
+- Password reset
+
+### 🖥️ Dashboards
+- Personalized views based on role
+- Upcoming classes and assignments
+- Notifications + Quick links
+
+### 🏫 Class & Subject Management
+- CRUD for classes
+- Assign teachers and students
+- Link subjects to classes
+
+### 🗓 Scheduling
+- Weekly timetable (conflict detection)
+- Room & teacher assignments
+- Google Calendar sync
+
+### 📝 Assignments
+- Create/upload assignments
+- Deadlines and file attachments
+- Submissions (students)
+- Grading + feedback
+
+### 📊 Exams & Grades
+- Schedule exams
+- Grade entry + calculation
+- Report card generation (PDF)
+
+### 🧍 Attendance
+- Daily check-in by teacher
+- Logs + reports
+- Absence reasons
+
+### 📣 Notifications
+- Global/Class announcements
+- In-app toasts + email alerts
+- Realtime messaging (optional)
+
+### 📅 Calendar & Events
+- School-wide calendar
+- Class-specific events
+- RSVP + reminders
+
+### 📚 Library
+- Upload/view/download resources
+- PDF/video support
+- Categorization + tags
+
+### 💳 Fees (Optional)
+- Track dues
+- Online payment (Stripe)
+- Receipt download
+
+### 👨‍👩‍👧 Parent Portal (Optional)
+- View child's grades + attendance
+- Notifications
+- Meeting scheduling
+
+## 📦 Database Tables (Supabase)
+
+```sql
+users(id, name, email, role, avatar_url)
+classes(id, name, teacher_id, room_no)
+subjects(id, name, class_id)
+enrollments(id, user_id, class_id)
+schedules(id, class_id, subject_id, day, time)
+assignments(id, subject_id, title, deadline, file_url)
+submissions(id, assignment_id, student_id, file_url, grade, feedback)
+attendance(id, class_id, student_id, date, status)
+exams(id, subject_id, title, date)
+grades(id, exam_id, student_id, score)
+announcements(id, title, audience, content)
+library_resources(id, title, type, file_url)
+```
+
+## 🧱 Phased Build Plan
+
+### Phase 1: Core Setup
+- Init Remix project
+- Configure Tailwind + Radix UI
+- Auth via Supabase
+- Dashboard scaffolding
+
+### Phase 2: Class Management
+- Models for user, class, subject
+- Admin UI for class creation
+- Enrollments logic
+
+### Phase 3: Scheduling
+- Timetable grid
+- Drag-and-drop builder
+- Conflict detection logic
+
+### Phase 4: Assignments
+- Teacher UI for assignments
+- Student submission portal
+- File upload & storage
+
+### Phase 5: Exams & Grades
+- Exam CRUD + linking to subjects
+- Grade calculation logic
+- Report card PDF generation
+
+### Phase 6: Attendance
+- Marking + tracking
+- Summaries per student/class
+
+### Phase 7: Notifications
+- Announcement system
+- Toasts + email triggers
+- Push notifications (optional)
+
+### Phase 8: Calendar
+- Shared calendar
+- Event CRUD + RSVP
+- Calendar feed export
+
+### Phase 9: Library
+- Resource upload
+- Search + filter
+
+### Phase 10: Fees & Parents (Optional)
+- Fee record model
+- Payment status + receipts
+- Parent linking to student
+
+### Phase 11: Finishing Touches
+- i18n, dark mode
+- Testing + CI
+- Error pages (404, 500)
+- Accessibility & SEO
+
+## ✨ Enhancements
+
+- **Gamification**: Badges for homework, attendance streaks
+- **AI Assistant**: Chatbot for students to ask questions
+- **PWA Support**: Offline features, push notifications
+- **Realtime Features**: Chat, live attendance view
+
+---

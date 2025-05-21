@@ -1,0 +1,19 @@
+This is a placeholder for the favicon.ico file.
+
+Please replace this file with a proper favicon.ico file to fix the 404 error.
+You can generate a favicon.ico file using online tools like https://favicon.io/ or use any existing favicon.ico file.
+
+To create a favicon.ico file:
+1. Rename this file from "favicon.ico.txt" to "favicon.ico"
+2. Replace its contents with the binary data of your favicon.ico file
+
+Alternatively, you can use a simple command to create a basic favicon.ico file:
+```bash
+# On macOS/Linux
+touch public/favicon.ico
+
+# On Windows
+type nul > public/favicon.ico
+```
+
+Having a proper favicon.ico file will prevent the 404 error when browsers automatically request this file.

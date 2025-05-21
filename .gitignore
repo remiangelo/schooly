@@ -1,0 +1,25 @@
+/tmp
+/out-tsc
+
+/node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/.pnp
+.pnp.js
+
+.vscode/*
+
+# Remix specific
+/build
+/public/build
+.env
+.cache
+/dist
+
+# Supabase
+.supabase
+
+# OS specific
+.DS_Store
+Thumbs.db
